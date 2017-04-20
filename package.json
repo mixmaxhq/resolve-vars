@@ -1,0 +1,28 @@
+{
+  "name": "@mixmaxhq/resolve-vars",
+  "private": true,  
+  "version": "0.0.0",
+  "description": "A simplified interface for resolving variables via pluggable backends.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mixmaxhq/resolve-vars.git"
+  },
+  "keywords": [
+    "variable",
+    "resolution"
+  ],
+  "author": "Trey Tacon <trey@mixmax.com> (https://mixmax.com)",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/mixmaxhq/resolve-vars/issues"
+  },
+  "homepage": "https://github.com/mixmaxhq/resolve-vars#readme",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "consul": "^0.28.0"
+  }
+}
