@@ -1,8 +1,7 @@
 {
-  "name": "@mixmaxhq/resolve-vars",
-  "private": true,  
+  "name": "resolve-vars",
   "version": "0.0.0",
-  "description": "A simplified interface for resolving variables via pluggable backends.",
+  "description": "A simplified interface for resolving variables via Consul.",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,7 +21,6 @@
   },
   "homepage": "https://github.com/mixmaxhq/resolve-vars#readme",
   "dependencies": {
-    "bluebird": "^3.5.0",
     "consul": "^0.28.0"
   }
 }
