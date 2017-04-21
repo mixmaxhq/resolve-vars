@@ -42,8 +42,9 @@ class Resolver {
    *
    * @param {String[]} keys An array of variable names to resolve. We cache all
    *   the variables locally as well.
-   * @returns {Promise} A promise that resolves once we've resolved all
-   *   variables. The resolved value will be an object of key/value pairs.
+   * @returns {Function<Promise>} A function that returns a promise that
+   *   resolves once we've resolved all variables. The resolved value will be
+   *   an object of key/value pairs.
    */
   task(keys) {
     return () => {
