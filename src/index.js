@@ -28,8 +28,12 @@ class Resolver {
   /**
    * Creates a new resolver and initializes the Consul handler reference.
    */
-  constructor() {
-    this._consul = consul();
+  constructor(options = {}) {
+    this._consul = consul(Object.assign({
+      host: process.env.RESOLVE_VARS_HOST || '127.0.0.1',
+      port: process.env.RESOLVE_VARS_PORT || '8500'
+    }, options));
+
     this._vars = {};
   }
 
