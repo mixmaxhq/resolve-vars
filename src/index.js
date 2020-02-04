@@ -29,10 +29,15 @@ class Resolver {
    * Creates a new resolver and initializes the Consul handler reference.
    */
   constructor(options = {}) {
-    this._consul = consul(Object.assign({
-      host: process.env.RESOLVE_VARS_HOST || '127.0.0.1',
-      port: process.env.RESOLVE_VARS_PORT || '8500'
-    }, options));
+    this._consul = consul(
+      Object.assign(
+        {
+          host: process.env.RESOLVE_VARS_HOST || '127.0.0.1',
+          port: process.env.RESOLVE_VARS_PORT || '8500',
+        },
+        options
+      )
+    );
 
     this._vars = {};
   }
@@ -52,9 +57,11 @@ class Resolver {
    */
   task(keys) {
     return () => {
-      return Promise.all(keys.map((key) => {
-        return this.get(key);
-      })).then((vals) => {
+      return Promise.all(
+        keys.map((key) => {
+          return this.get(key);
+        })
+      ).then((vals) => {
         var ret = {};
         for (let i = 0; i < keys.length; i++) {
           ret[keys[i]] = vals[i];
